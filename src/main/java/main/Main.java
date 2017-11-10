@@ -11,13 +11,5 @@ public class Main {
 
     public static void main (String[] args) {
 
-        try ( BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            String nam = br.readLine();
-            String name ="test";
-            System.out.println("helloü" + name);
-
-        } catch (IOException e){
-            System.out.println(e.getMessage());
-        }
     }
 }
