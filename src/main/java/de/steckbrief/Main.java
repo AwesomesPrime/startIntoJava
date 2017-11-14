@@ -8,8 +8,8 @@ public class Main {
 
     public static void main (String[] args) {
 
-        String vorname = "";
-        String nachname = "";
+        String vorname = null;
+        String nachname = null;
         int körpergröße = 0;
         int alter = 0;
 
@@ -49,4 +49,5 @@ public class Main {
         System.out.println("Bitte gib eine ganze Zahl an");
         return Integer.parseInt(br.readLine());
     }
+
 }
