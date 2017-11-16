@@ -1,6 +1,9 @@
 package de.rennauto;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Rennwagen {
 
 
@@ -12,6 +15,7 @@ public class Rennwagen {
     private int hubraum;
     private float istTankInhalt;
     private float maxTankInhalt;
+    private Map<String, Fahrer> fahrerMap = new HashMap<>();
 
     public Rennwagen() {
         id = "RW_" + anzahlRennwagen;
@@ -30,6 +34,23 @@ public class Rennwagen {
         this(modell, hersteller);
         this.maxTankInhalt = maxTankInhalt;
     }
+
+    public void einfuegenFahrer(Fahrer fahrer) {
+        fahrerMap.put(fahrer.getName(), fahrer);
+    }
+
+    public void loescheFahrer(Fahrer fahrer) {
+        fahrerMap.remove(fahrer.getName());
+    }
+
+    public void druckeFahrerliste() {
+
+
+        for(Map.Entry<String, Fahrer> stringFahrerEntry : fahrerMap.entrySet()){
+            stringFahrerEntry.getValue().getInfo();
+        }
+    }
+
 
     public void fahren(float gefahreneKilometer, float durschnittsVerbrauch){
         float verbrauch = gefahreneKilometer * durschnittsVerbrauch / 100;
